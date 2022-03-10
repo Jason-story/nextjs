@@ -1,10 +1,10 @@
 org: '1253913402'
-app: next-test
-stage: dev
+app: next
+stage: prod
 component: layer
-name: next-test-layer
+name: next-layer
 inputs:
-  name: next-test-layer
+  name: next-layer
   region: ap-beijing
   src:
     src: ../node_modules

@@ -1,5 +1,5 @@
 component: http
-name: http-nextjs-4HMK7ipWPx
+name: http-nextjs-03dWDhOxhx
 inputs:
   src:
     dist: ./
@@ -16,8 +16,8 @@ inputs:
     tags: []
     environments: []
     layers:
-      - name: '${output:${stage}:${app}:next-test-layer.name}'
-        version: '${output:${stage}:${app}:next-test-layer.version}'
+      - name: '${output:${stage}:${app}:next-layer.name}'
+        version: '${output:${stage}:${app}:next-layer.version}'
   apigw:
     protocols:
       - http
@@ -28,5 +28,5 @@ inputs:
   region: ap-beijing
   isAutoCiDeploy: false
 org: '1253913402'
-app: next-test
-stage: dev
+app: next
+stage: prod
