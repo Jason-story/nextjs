@@ -1,0 +1,32 @@
+component: http
+name: http-nextjs-4HMK7ipWPx
+inputs:
+  src:
+    dist: ./
+    hook: npm run build
+    exclude:
+      - .env
+  faas:
+    runtime: Nodejs12.16
+    framework: nextjs
+    name: '${name}'
+    eip: false
+    timeout: 3
+    memorySize: 512
+    tags: []
+    environments: []
+    layers:
+      - name: '${output:${stage}:${app}:next-test-layer.name}'
+        version: '${output:${stage}:${app}:next-test-layer.version}'
+  apigw:
+    protocols:
+      - http
+      - https
+    timeout: 60
+    environment: release
+    customDomains: []
+  region: ap-beijing
+  isAutoCiDeploy: false
+org: '1253913402'
+app: next-test
+stage: dev

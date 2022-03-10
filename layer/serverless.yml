@@ -1,0 +1,13 @@
+org: '1253913402'
+app: next-test
+stage: dev
+component: layer
+name: next-test-layer
+inputs:
+  name: next-test-layer
+  region: ap-beijing
+  src:
+    src: ../node_modules
+    targetDir: /node_modules
+  runtimes:
+    - Nodejs12.16
