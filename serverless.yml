@@ -1,5 +1,5 @@
 component: http
-name: http-nextjs-03dWDhOxhx
+name: nextDemo
 inputs:
   src:
     dist: ./
@@ -7,26 +7,11 @@ inputs:
     exclude:
       - .env
   faas:
-    runtime: Nodejs16.14.0
+    runtime: Nodejs16.13
     framework: nextjs
-    name: '${name}'
-    eip: false
-    timeout: 3
-    memorySize: 512
-    tags: []
-    environments: []
-    layers:
-      - name: '${output:${stage}:${app}:next-layer.name}'
-        version: '${output:${stage}:${app}:next-layer.version}'
+    name: ${name}
   apigw:
     protocols:
       - http
       - https
-    timeout: 60
-    environment: release
-    customDomains: []
-  region: ap-beijing
-  isAutoCiDeploy: false
-org: '1253913402'
 app: next
-stage: prod
